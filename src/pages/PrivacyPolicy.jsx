@@ -17,7 +17,7 @@ const PrivacyPolicy = () => {
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
               Privacy Policy
             </h1>
-            <p className="text-muted-foreground mb-8">Last updated November 13, 2025</p>
+            <p className="text-muted-foreground mb-8">Last updated: November 13, 2025</p>
             <p className="text-foreground mb-6">
               This Privacy Policy describes Our policies and procedures on the collection, use and
               disclosure of Your information when You use the Service and tells You about Your
