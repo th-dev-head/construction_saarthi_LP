@@ -50,7 +50,7 @@ const Footer = () => {
         <div className="bg-white md:bg-transparent -mx-4 lg:mx-0 px-4 lg:px-0 pb-4 md:pb-0">
           <div className="flex flex-col-reverse md:flex-row justify-between items-center gap-4 pt-4 2xl:pt-6 text-center md:text-left">
             <p className="text-[10px] md:text-xs 2xl:text-lg font-medium text-[#2D2D2D] border-t border-[#E5E5E5] md:border-t-0 pt-4">
-              © 2025 GarageSaarthi. All rights reserved by{" "}
+              © {new Date().getFullYear()} ConstructionSaarthi. All rights reserved by{" "}
               <span className="text-[#B02E0C]">Techifyhouse.</span>
             </p>
 
