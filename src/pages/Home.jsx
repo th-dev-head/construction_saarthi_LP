@@ -3,6 +3,7 @@ import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
 import Button from "../components/common/Button";
 import SuccessModal from "../components/common/SuccessModal";
+import FAQ from "../components/home/FAQ";
 import { useLocation } from "react-router-dom";
 
 // Assets
@@ -58,10 +59,10 @@ const Home = () => {
             {/* LEFT CONTENT */}
             <div className=" px-6 md:px-10 2xl:px-25 pt-8 md:pt-11 pb-8 md:pb-12 flex flex-col justify-center">
               {/* Badge */}
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#E9E2D8] rounded-full text-xs 2xl:text-2xl font-semibold w-fit">
+              {/* <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#E9E2D8] rounded-full text-xs 2xl:text-2xl font-semibold w-fit">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#B02E0C]" />
                 Product by <span className="text-[#B02E0C]">TechifyHouse</span>
-              </div>
+              </div> */}
 
               {/* Heading */}
               <h1 className="mt-6 2xl:mt-10 text-4xl md:text-4xl lg:text-4xl 2xl:text-6xl font-semibold leading-tight">
@@ -101,7 +102,7 @@ const Home = () => {
                     </svg>
                   }
                 >
-                  Join Waitlist
+                  Book Demo
                 </Button>
               </div>
 
@@ -167,14 +168,13 @@ const Home = () => {
             {/* Heading */}
             <div className="text-center space-y-2">
               {/* Badge */}
-              <div
-                className="inline-flex items-center gap-2 px-4 py-1 bg-[#E9E2D8] rounded-full text-xs 2xl:text-xl font-semibold max-[380px]:text-[9px] max-[380px]:px-3">
+              <div className="inline-flex items-center gap-2 px-4 py-1 bg-[#E9E2D8] rounded-full text-xs 2xl:text-xl font-semibold max-[380px]:text-[9px] max-[380px]:px-3">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#B02E0C]" />
                 Shift from generic “AI” claims to real, site-level value.
               </div>
 
               {/* Heading */}
-              <h2 className=" font-semibold text-2xl 2xl:text-6xl md:text-3xl max-[360px]:text-lg leading-snug" >
+              <h2 className=" font-semibold text-2xl 2xl:text-6xl md:text-3xl max-[360px]:text-lg leading-snug">
                 AI That Actually Works on{" "}
                 <span className="text-[#C4431B]">Construction Sites</span>
               </h2>
@@ -371,10 +371,12 @@ const Home = () => {
           </div>
         </section>
 
-        {/* Launching Soon Section */}
+        <FAQ />
+
+        {/* Available Section */}
         <section
           id="waitlist"
-          className="py-10 px-4 lg:px-14 2xl:px-27 2xl:py-20 overflow-hidden"
+          className="py-20 px-4 lg:px-14 2xl:px-27 2xl:py-20 overflow-hidden"
         >
           <div className="max-w-full mx-auto space-y-8">
             {/* Heading */}
@@ -385,8 +387,8 @@ const Home = () => {
               </div>
 
               <h2 className=" font-semibold pt-4 text-3xl md:text-4xl max-[375px]:text-xl max-[320px]:text-lg 2xl:text-6xl leading-snug">
-                <span className="text-[#B02E0C]">Launching Soon</span> for
-                Indian Contractors
+                <span className="text-[#B02E0C]">Available</span> for Indian
+                Contractors
               </h2>
 
               <p className=" max-w-2xl mx-auto 2xl:max-w-4xl text-base 2xl:text-xl  max-[375px]:text-xs max-[320px]:text-[10px] leading-relaxed">
@@ -408,11 +410,10 @@ const Home = () => {
                 {/* Text */}
                 <div className="relative z-10 h-full px-8 2xl:px-20 md:px-14 flex flex-col justify-center">
                   <h2 className="text-white text-2xl md:text-3xl 2xl:text-5xl font-medium mb-4 2xl:mb-8 leading-relaxed">
-                    Join the Early Access Waitlist
+                    Book Demo For Early Access
                   </h2>
                   <p className="text-gray-200 max-w-sm 2xl:max-w-xl text-sm md:text-base 2xl:text-2xl">
-                    We’ll notify you as soon as Construction Saarthi is
-                    available in your area.
+                    Schedule your demo today, and we’ll get in touch with you as soon as possible.
                   </p>
                 </div>
               </div>
@@ -499,7 +500,7 @@ const Home = () => {
                           </svg>
                         }
                       >
-                        Join Waitlist
+                        Book Demo
                       </Button>
                     </div>
                   </form>

@@ -10,30 +10,31 @@ const Header = () => {
   const location = useLocation();
   const isHomePage = location.pathname === "/";
 
+  const navItems = [
+    { label: "Home", id: "home" },
+    { label: "Features", id: "features" },
+    { label: "Impact", id: "impact" },
+  ];
+
   const handleNavigation = (e, id) => {
     e.preventDefault();
-    
+
     if (isHomePage) {
-      const element = document.getElementById(id);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
+      if (id === "home") {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      } else {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
       }
-      // Map id to label roughly or just keep current active logic
-      const item = navItems.find(i => i.id === id);
-      if(item) setActiveItem(item.label);
+      const item = navItems.find((i) => i.id === id);
+      if (item) setActiveItem(item.label);
     } else {
       navigate("/", { state: { scrollTo: id } });
     }
     setIsMenuOpen(false);
   };
-
-  const navItems = [
-    { label: "Home", id: "home" },
-    { label: "Features", id: "features" },
-    { label: "Impact", id: "impact" },
-    { label: "Preview", id: "preview" },
-    { label: "Waitlist", id: "waitlist" },
-  ];
 
   return (
     <header className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md">
@@ -77,7 +78,7 @@ const Header = () => {
           </button>
 
           {/* Logo & Brand */}
-          <div 
+          <div
             className="flex items-center gap-2 cursor-pointer lg:order-none"
             onClick={(e) => handleNavigation(e, "home")}
           >
@@ -86,8 +87,8 @@ const Header = () => {
               alt="Construction Saarthi Logo"
               className="h-6 w-auto lg:h-8"
             />
-            <span className="hidden min-[425px]:inline-block font-bold text-sm lg:text-md whitespace-nowrap">
-              Construction Saarthi
+            <span className="hidden min-[425px]:inline-block font-bold text-[#060C12] text-sm lg:text-md whitespace-nowrap">
+              ConstructionSaarthi
             </span>
           </div>
 
@@ -104,22 +105,14 @@ const Header = () => {
                   className={`
                     flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-medium
                     transition-all duration-200
-                    ${
-                      isActive
-                        ? "bg-[#F9F6F3] text-black"
-                        : "text-[#5F5F5F]"
-                    }
+                    ${isActive ? "bg-[#F9F6F3] text-black" : "text-[#5F5F5F]"}
                   `}
                 >
                   <span
                     className={`
                       w-1.5 h-1.5 rounded-full bg-[#C4431B]
                       transition-opacity duration-200
-                      ${
-                        isActive
-                          ? "opacity-100"
-                          : "opacity-0"
-                      }
+                      ${isActive ? "opacity-100" : "opacity-0"}
                     `}
                   />
                   {item.label}
@@ -151,7 +144,7 @@ const Header = () => {
                 </svg>
               }
             >
-              Join Waitlist
+              Book Demo
             </Button>
           </div>
 
