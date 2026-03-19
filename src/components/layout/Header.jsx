@@ -16,8 +16,25 @@ const Header = () => {
     { label: "Impact", id: "impact" },
   ];
 
+  // Sync active item with location state (for cross-page navigation)
+  React.useEffect(() => {
+    if (isHomePage) {
+      if (location.state?.scrollTo) {
+        const item = navItems.find((i) => i.id === location.state.scrollTo);
+        if (item) setActiveItem(item.label);
+      } else if (window.scrollY < 100) {
+        setActiveItem("Home");
+      }
+    } else {
+      setActiveItem("");
+    }
+  }, [location, isHomePage]);
+
   const handleNavigation = (e, id) => {
     e.preventDefault();
+
+    const item = navItems.find((i) => i.id === id);
+    if (item) setActiveItem(item.label);
 
     if (isHomePage) {
       if (id === "home") {
@@ -28,8 +45,6 @@ const Header = () => {
           element.scrollIntoView({ behavior: "smooth" });
         }
       }
-      const item = navItems.find((i) => i.id === id);
-      if (item) setActiveItem(item.label);
     } else {
       navigate("/", { state: { scrollTo: id } });
     }

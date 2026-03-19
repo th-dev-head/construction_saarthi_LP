@@ -10,8 +10,10 @@ const App = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+    if (!location.state?.scrollTo) {
+      window.scrollTo(0, 0);
+    }
+  }, [pathname, location.state]);
 
   return (
   <>
