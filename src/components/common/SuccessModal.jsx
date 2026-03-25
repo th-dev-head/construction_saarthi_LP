@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../assets/icon/Csmodel.svg";
+import logo from "../../assets/icon/Csmodel.png";
 
 const SuccessModal = ({ isOpen, onClose, email }) => {
   if (!isOpen) return null;
@@ -44,7 +44,7 @@ const SuccessModal = ({ isOpen, onClose, email }) => {
           <p className="text-[#525465] text-sm md:text-[14px] 2xl:text-2xl leading-relaxed max-w-xl 2xl:max-w-4xl">
             You will receive an email regarding your ConstructionSaarthi
             registration at your registered email address:{" "}
-            <span className="font-semibold text-black">{email || "demo56@gmail.com"}</span>.
+            <span className="font-semibold text-black">{email}</span>.
           </p>
         </div>
       </div>

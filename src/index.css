@@ -13,6 +13,11 @@
 
 
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
 :root {
   background-color: #FDFCFB;
   color: var(--color-text-main);
