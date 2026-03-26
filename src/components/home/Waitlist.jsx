@@ -20,7 +20,7 @@ const Waitlist = ({ formData, setFormData, handleFormSubmit }) => {
           </h2>
 
           <p className=" max-w-2xl mx-auto 2xl:max-w-4xl text-base 2xl:text-xl  max-[375px]:text-xs max-[320px]:text-[10px] leading-relaxed">
-            Be among the first to manage construction sites with AI —
+            Be among the first to manage construction sites with AI -
             faster, smarter, and simpler.
           </p>
         </div>

@@ -2,6 +2,7 @@ import React from "react";
 import Button from "../common/Button";
 import handImage from "../../assets/icon/Heroo.png";
 import handdImage from "../../assets/icon/Vector.png";
+import IndiaFlag from "../../assets/icon/flag.png";
 
 const Hero = ({ scrollToSection }) => {
   return (
@@ -14,14 +15,14 @@ const Hero = ({ scrollToSection }) => {
             Manage Every <br />
             Construction Site Smarter
             <span className="block text-[#B02E0C] text-base md:text-lg 2xl:text-3xl mt-3">
-              – From One Powerful Dashboard
+              - From One Powerful Dashboard
             </span>
           </h1>
 
           {/* Description */}
           <p className="mt-4 2xl:mt-10 text-xs max-w-2xl 2xl:max-w-6xl 2xl:text-lg leading-relaxed text-[#4A4A4A]">
-            Plan projects, track materials, manage labor, control finances,
-            and calculate costs — all in one simple, AI-powered construction
+            Plan projects, track materials, manage labor, control finances, and
+            calculate costs , all in one simple, AI-powered construction
             management platform built for real site work.
           </p>
 
@@ -80,8 +81,15 @@ const Hero = ({ scrollToSection }) => {
             {/* 4 → MOBILE + DESKTOP BORDER */}
             <div className="border-l-2 pl-4 md:border-l-2 border-[#E5DED5]">
               <h3 className="text-xl 2xl:text-3xl font-bold">India</h3>
-              <p className="text-xs 2xl:text-xl tracking-wider mt-1">
-                Built For <span>🇮🇳</span>
+
+              <p className="text-xs 2xl:text-xl tracking-wider mt-1 flex items-center gap-1">
+                Built For
+                  <img
+                    src={IndiaFlag}
+                    alt="India Flag"
+                    className="w-4 h-4 object-contain"
+                  />
+                <span>🇮🇳</span>
               </p>
             </div>
           </div>
