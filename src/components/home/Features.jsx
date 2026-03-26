@@ -25,9 +25,7 @@ const Features = () => {
 
           {/* Paragraph */}
           <p className=" text-sm 2xl:text-lg max-w-2xl 2xl:max-w-7xl mx-auto max-[360px]:text-xs leading-relaxed">
-            Built with practical, next-gen AI to simplify planning, reduce
-            errors, and improve decision-making across every stage of
-            construction.
+            Built with practical, next-gen AI to simplify planning, reduce errors, and improve decision-making across every stage of construction.
           </p>
         </div>
 
@@ -55,7 +53,7 @@ const Features = () => {
                 </h3>
                 <p className="text-xs 2xl:text-lg leading-relaxed">
                   Get accurate material quantities, cost estimates, and
-                  timelines instantly — reducing guesswork and costly
+                  timelines instantly - reducing guesswork and costly
                   overruns before work even begins.
                 </p>
               </div>
@@ -72,7 +70,7 @@ const Features = () => {
                 </h3>
                 <p className="text-xs 2xl:text-lg leading-relaxed">
                   Create professional quotations, contracts, BOQs, and site
-                  reports in minutes — standardized, error-free, and ready
+                  reports in minutes - standardized, error-free, and ready
                   to share.
                 </p>
               </div>
@@ -89,7 +87,7 @@ const Features = () => {
                 </h3>
                 <p className="text-xs 2xl:text-lg leading-relaxed">
                   Track attendance, wages, and daily expenses automatically
-                  — giving you complete visibility into manpower and cash
+                  - giving you complete visibility into manpower and cash
                   flow.
                 </p>
               </div>
