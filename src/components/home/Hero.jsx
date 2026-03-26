@@ -14,14 +14,14 @@ const Hero = ({ scrollToSection }) => {
             Manage Every <br />
             Construction Site Smarter
             <span className="block text-[#B02E0C] text-base md:text-lg 2xl:text-3xl mt-3">
-              – From One Powerful Dashboard
+              - From One Powerful Dashboard
             </span>
           </h1>
 
           {/* Description */}
           <p className="mt-4 2xl:mt-10 text-xs max-w-2xl 2xl:max-w-6xl 2xl:text-lg leading-relaxed text-[#4A4A4A]">
             Plan projects, track materials, manage labor, control finances,
-            and calculate costs — all in one simple, AI-powered construction
+            and calculate costs - all in one simple, AI-powered construction
             management platform built for real site work.
           </p>
 
