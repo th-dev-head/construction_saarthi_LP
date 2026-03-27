@@ -27,7 +27,20 @@ const Hero = ({ scrollToSection }) => {
           </p>
 
           {/* CTA */}
-          <div className="mt-6">
+          <div className="mt-6 gap-2 flex flex-wrap">
+            {/* Login Button */}
+            <a
+              href="https://platform.constructionsaarthi.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button
+                variant="outline"
+                className="text-xs lg:text-sm lg:px-6 lg:py-2"
+              >
+                Login
+              </Button>
+            </a>
             <Button
               variant="primary"
               className="text-base font-medium"
@@ -84,11 +97,11 @@ const Hero = ({ scrollToSection }) => {
 
               <p className="text-xs 2xl:text-xl tracking-wider mt-1 flex items-center gap-1">
                 Built For
-                  <img
-                    src={IndiaFlag}
-                    alt="India Flag"
-                    className="w-4 h-4 object-contain"
-                  />
+                <img
+                  src={IndiaFlag}
+                  alt="India Flag"
+                  className="w-4 h-4 object-contain"
+                />
                 <span>🇮🇳</span>
               </p>
             </div>

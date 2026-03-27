@@ -102,7 +102,7 @@ const Header = () => {
               alt="Construction Saarthi Logo"
               className="h-6 w-auto lg:h-8"
             />
-            <span className="hidden min-[425px]:inline-block font-bold text-[#060C12] text-sm lg:text-md whitespace-nowrap">
+            <span className="hidden min-[440px]:inline-block font-bold text-[#060C12] text-sm lg:text-md whitespace-nowrap">
               ConstructionSaarthi
             </span>
           </div>
@@ -137,30 +137,50 @@ const Header = () => {
           </nav>
 
           {/* CTA Button */}
-          <div className="flex items-center">
-            <Button
-              variant="primary"
-              className="px-4 py-1.5 text-xs lg:text-sm lg:px-6 lg:py-2"
-              onClick={(e) => handleNavigation(e, "waitlist")}
-              icon={
-                <svg
-                  width="14"
-                  height="14"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="lg:w-4 lg:h-4"
-                >
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                  <polyline points="12 5 19 12 12 19" />
-                </svg>
-              }
+          <div className="flex items-center gap-2">
+            {/* Login Button */}
+            <a
+              href="https://platform.constructionsaarthi.com"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              Book Demo
-            </Button>
+              <Button
+                variant="outline"
+                className="text-xs lg:text-sm lg:px-6 lg:py-2"
+              >
+                Login
+              </Button>
+            </a>
+
+            {/* Register Button */}
+            <a
+              href="https://platform.constructionsaarthi.com/register"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button
+                variant="primary"
+                className="text-xs lg:text-sm lg:px-6 lg:py-2"
+                // icon={
+                //   <svg
+                //     width="14"
+                //     height="14"
+                //     viewBox="0 0 24 24"
+                //     fill="none"
+                //     stroke="currentColor"
+                //     strokeWidth="3"
+                //     strokeLinecap="round"
+                //     strokeLinejoin="round"
+                //     className="lg:w-4 lg:h-4"
+                //   >
+                //     <line x1="5" y1="12" x2="19" y2="12" />
+                //     <polyline points="12 5 19 12 12 19" />
+                //   </svg>
+                // }
+              >
+                Register
+              </Button>
+            </a>
           </div>
 
           {/* Mobile/Tablet Dropdown Menu */}
@@ -192,6 +212,5 @@ const Header = () => {
     </header>
   );
 };
-
 
 export default Header;
