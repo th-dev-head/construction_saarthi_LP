@@ -102,7 +102,6 @@ const Hero = ({ scrollToSection }) => {
                   alt="India Flag"
                   className="w-4 h-4 object-contain"
                 />
-                <span>🇮🇳</span>
               </p>
             </div>
           </div>

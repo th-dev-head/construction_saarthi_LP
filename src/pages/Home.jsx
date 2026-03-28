@@ -15,9 +15,11 @@ const Home = () => {
     firstName: "",
     lastName: "",
     email: "",
+    phone: "",
     message: "",
   });
   const [submittedEmail, setSubmittedEmail] = useState("");
+  const [submittedPhone, setSubmittedPhone] = useState("");
   const location = useLocation();
 
   useEffect(() => {
@@ -55,12 +57,14 @@ const Home = () => {
 
       if (response.ok) {
         setSubmittedEmail(formData.email);
+        setSubmittedPhone(formData.phone);
         setIsModalOpen(true);
         // Reset form data after successful submission
         setFormData({
           firstName: "",
           lastName: "",
           email: "",
+          phone: "",
           message: "",
         });
       } else {
@@ -95,6 +99,7 @@ const Home = () => {
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         email={submittedEmail}
+        phone={submittedPhone}
       />
     </div>
   );
