@@ -5,7 +5,10 @@ import AeroIcon from "../../assets/icon/Aero.svg";
 
 const Waitlist = ({ formData, setFormData, handleFormSubmit }) => {
   return (
-    <section id="waitlist" className="py-20 px-4 lg:px-14 2xl:px-27 2xl:py-20 overflow-hidden">
+    <section
+      id="waitlist"
+      className="py-20 px-4 lg:px-14 2xl:px-27 2xl:py-20 overflow-hidden"
+    >
       <div className="max-w-full mx-auto space-y-8">
         {/* Heading */}
         <div className="text-center space-y-2">
@@ -20,8 +23,8 @@ const Waitlist = ({ formData, setFormData, handleFormSubmit }) => {
           </h2>
 
           <p className=" max-w-2xl mx-auto 2xl:max-w-4xl text-base 2xl:text-xl  max-[375px]:text-xs max-[320px]:text-[10px] leading-relaxed">
-            Be among the first to manage construction sites with AI -
-            faster, smarter, and simpler.
+            Be among the first to manage construction sites with AI - faster,
+            smarter, and simpler.
           </p>
         </div>
 
@@ -41,7 +44,8 @@ const Waitlist = ({ formData, setFormData, handleFormSubmit }) => {
                 Book Demo For Early Access
               </h2>
               <p className="text-gray-200 max-w-sm 2xl:max-w-xl text-sm md:text-base 2xl:text-2xl">
-                Schedule your demo today, and we’ll get in touch with you as soon as possible.
+                Schedule your demo today, and we’ll get in touch with you as
+                soon as possible.
               </p>
             </div>
           </div>
@@ -66,6 +70,7 @@ const Waitlist = ({ formData, setFormData, handleFormSubmit }) => {
                           firstName: e.target.value,
                         })
                       }
+                      placeholder="Write your first name..."
                       className="w-full border-b border-[#817794] 2xl:mt-4 mb-4 focus:border-[#C4431B] outline-none text-sm bg-transparent"
                     />
                   </div>
@@ -83,6 +88,7 @@ const Waitlist = ({ formData, setFormData, handleFormSubmit }) => {
                           lastName: e.target.value,
                         })
                       }
+                      placeholder="Write your last name..."
                       className="w-full border-b border-[#817794] 2xl:mt-4 mb-4 focus:border-[#C4431B] outline-none text-sm bg-transparent"
                     />
                   </div>
@@ -102,6 +108,7 @@ const Waitlist = ({ formData, setFormData, handleFormSubmit }) => {
                       onChange={(e) =>
                         setFormData({ ...formData, email: e.target.value })
                       }
+                      placeholder="Write your email address..."
                       className="w-full border-b border-[#817794] 2xl:mt-4 mb-4 focus:border-[#C4431B] outline-none text-sm bg-transparent"
                     />
                   </div>
@@ -114,9 +121,13 @@ const Waitlist = ({ formData, setFormData, handleFormSubmit }) => {
                       type="tel"
                       name="phone"
                       value={formData.phone}
-                      onChange={(e) =>
-                        setFormData({ ...formData, phone: e.target.value })
-                      }
+                      maxLength={10}
+                      pattern="[0-9]{10}"
+                      onChange={(e) => {
+                        const value = e.target.value.replace(/\D/g, "");
+                        setFormData({ ...formData, phone: value });
+                      }}
+                      placeholder="Write your phone number..."
                       className="w-full border-b border-[#817794] 2xl:mt-4 mb-4 focus:border-[#C4431B] outline-none text-sm bg-transparent"
                     />
                   </div>
