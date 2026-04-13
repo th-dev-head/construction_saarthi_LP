@@ -6,7 +6,7 @@ import EmailIcon from "../../assets/icon/Email.svg";
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-[#E9E2D8] px-4 lg:px-14 2xl:px-27 pt-6 md:pt-10 2xl:pt-15 md:pb-10 2xl:pb-15">
+    <footer className="w-full bg-[#E9E2D8] px-4 lg:px-14 2xl:px-[260px] pt-6 md:pt-10 2xl:pt-15 md:pb-10 2xl:pb-15">
       <div className="max-w-full mx-auto">
         {/* Top Section */}
         <div className="flex flex-col md:flex-row justify-between gap-10 border-b border-[#D8D0C5] pb-4 2xl:pb-8">

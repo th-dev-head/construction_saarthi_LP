@@ -6,6 +6,7 @@ import FAQ from "../components/home/FAQ";
 import Hero from "../components/home/Hero";
 import Features from "../components/home/Features";
 import Impact from "../components/home/Impact";
+import HowItWorks from "../components/home/HowItWorks";
 import Waitlist from "../components/home/Waitlist";
 import { useLocation } from "react-router-dom";
 
@@ -86,6 +87,7 @@ const Home = () => {
         <Hero scrollToSection={scrollToSection} />
         <Features />
         <Impact />
+        <HowItWorks />
         <FAQ />
         <Waitlist
           formData={formData}

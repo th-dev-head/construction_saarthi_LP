@@ -37,14 +37,14 @@ const FAQ = () => {
   };
 
   return (
-    <section id="faq" className="pt-20 px-4 lg:px-14 2xl:px-27 overflow-hidden">
+    <section id="faq" className="pt-20 px-4 lg:px-14 2xl:px-[260px] overflow-hidden">
       <div className="max-w-full mx-auto space-y-8">
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-1 bg-[#E9E2D8] rounded-full text-xs 2xl:text-xl font-semibold mb-4">
+          <div className="inline-flex items-center gap-2 px-4 py-1 bg-[#E9E2D8] rounded-full text-xs 2xl:text-lg font-medium max-[380px]:text-[9px] max-[380px]:px-3">
             <span className="w-1.5 h-1.5 rounded-full bg-[#B02E0C]" />
             Frequently Asked Questions
           </div>
-          <h2 className="text-3xl md:text-4xl 2xl:text-6xl font-semibold">
+          <h2 className="font-semibold text-2xl 2xl:text-5xl md:text-3xl max-[360px]:text-lg leading-snug">
             Need Help? Check Our{" "}
             <span className="text-[#C4431B]">Questions</span>
           </h2>
@@ -65,7 +65,7 @@ const FAQ = () => {
                     openIndex === index ? "bg-[#EBEAE8]" : "bg-[#F5F4F2]"
                   }`}
                 >
-                  <span className="text-base md:text-lg 2xl:text-2xl font-medium text-[#2D2D2D]">
+                  <span className="text-base md:text-md 2xl:text-lg font-medium text-[#2D2D2D]">
                     {faq.question}
                   </span>
                   <svg
@@ -92,7 +92,7 @@ const FAQ = () => {
                   }`}
                 >
                   <div
-                    className={`p-5 text-sm md:text-base 2xl:text-xl text-[#5F5F5F] border-t border-[#E5DED5] ${
+                    className={`p-5 text-sm md:text-base 2xl:text-lg text-[#5F5F5F] border-t border-[#E5DED5] ${
                       openIndex === index ? "bg-[#EBEAE8]" : "bg-[#EBEAE8]"
                     }`}
                   >
