@@ -7,7 +7,7 @@ import DasIcon from "../../assets/icon/Dd.svg";
 
 const Features = () => {
   return (
-    <section id="features" className="py-10 bg-white">
+    <section id="features" className="pt-15 pb-10 bg-white">
       <div className="max-w-full mx-auto space-y-10 py-10 px-4 lg:px-14 2xl:px-[260px] 2xl:py-20">
         {/* Heading */}
         <div className="text-center space-y-2">
