@@ -29,15 +29,15 @@ const Impact = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 2xl:gap-10">
           {/* Card 1 */}
           <div className="bg-[#EBEAE8] p-6 rounded-2xl flex flex-col h-full overflow-hidden">
-            <div className="w-full h-[220px] 2xl:h-[320px] flex items-center justify-center mt-4 -mb-5">
+            <div className="w-full h-[220px] 2xl:h-[320px] flex items-center justify-center -mt-3 -mb-5">
               <img
                 src={recedencyImage}
                 alt="Dashboard Preview"
-                className="max-h-full w-full object-contain scale-[1.2]"
+                className="max-h-full w-full object-contain "
               />
             </div>
 
-            <h3 className="text-xl 2xl:text-[28px] font-semibold">
+            <h3 className="text-lg 2xl:text-[22px] font-semibold">
               Smart Dashboard
             </h3>
 
@@ -46,20 +46,20 @@ const Impact = () => {
               - without calling the site supervisor or opening spreadsheets.
             </p>
 
-            
+
           </div>
 
           {/* Card 2 */}
           <div className="bg-[#EBEAE8] p-6 rounded-2xl flex flex-col h-full overflow-hidden">
-            <div className="w-full h-[220px] 2xl:h-[320px] flex items-center justify-center mt-5 -mb-5 ml-2">
+            <div className="w-full h-[220px] 2xl:h-[320px] flex items-center justify-center -mt-1 -mb-6">
               <img
                 src={calcIcon}
                 alt="Calculator Preview"
-                className="max-h-full w-full object-contain scale-[1.2]"
+                className="max-h-full w-full object-contain "
               />
             </div>
 
-            <h3 className="text-xl 2xl:text-[28px] font-semibold">
+            <h3 className="text-lg 2xl:text-[22px] font-semibold">
               AI Powered Calculator
             </h3>
 
@@ -73,15 +73,15 @@ const Impact = () => {
 
           {/* Card 3 */}
           <div className="bg-[#EBEAE8] p-6 rounded-2xl flex flex-col h-full overflow-hidden">
-            <div className="w-full h-[220px] 2xl:h-[320px] flex items-center justify-center mt-8 -mb-9">
+            <div className="w-full h-[220px] 2xl:h-[320px] flex items-center justify-center mt-8 -mb-15">
               <img
                 src={inventoryIcon}
                 alt="Inventory Preview"
-                className="max-h-full w-full object-contain scale-[1.2]"
+                className="max-h-full w-full object-contain"
               />
             </div>
 
-            <h3 className="text-xl 2xl:text-[28px] font-semibold ">
+            <h3 className="text-lg 2xl:text-[22px] font-semibold ">
               Inventory Management
             </h3>
 
@@ -90,7 +90,7 @@ const Impact = () => {
               real time - preventing shortages, wastage, and theft.
             </p>
 
-            
+
           </div>
         </div>
       </div>

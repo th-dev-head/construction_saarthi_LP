@@ -50,12 +50,12 @@ const HowItWorks = () => {
         <div className="text-center space-y-4 mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-1 bg-[#E9E2D8] rounded-full text-xs 2xl:text-lg font-medium">
             <span className="w-1.5 h-1.5 rounded-full bg-[#B02E0C]" />
-            Shift from generic "AI" claims to real, site-level value.
+            How It Works
           </div>
-          <h2 className="font-semibold text-3xl 2xl:text-6xl md:text-5xl max-[360px]:text-2xl leading-tight">
+          <h2 className="font-semibold text-2xl 2xl:text-5xl md:text-3xl max-[360px]:text-lg">
             How <span className="text-[#B02E0C]">ConstructionSaarthi</span> Works
           </h2>
-          <p className="text-[#5F5F5F] text-sm 2xl:text-xl max-w-2xl mx-auto">
+          <p className="text-sm 2xl:text-[16px] max-w-2xl 2xl:max-w-3xl mx-auto max-[360px]:text-xs">
             Get started in minutes and streamline your entire construction workflow.
           </p>
         </div>

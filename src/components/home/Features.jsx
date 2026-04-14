@@ -1,5 +1,5 @@
 import React from "react";
-import siteImage from "../../assets/icon/Features.png";
+import siteImage from "../../assets/icon/Features2.png";
 import calIcon from "../../assets/icon/Cc.svg";
 import GenIcon from "../../assets/icon/Gg.svg";
 import TracIcon from "../../assets/icon/Tt.svg";
@@ -43,11 +43,11 @@ const Features = () => {
           {/* RIGHT CONTENT */}
           <div className="flex-1 space-y-4 xl:space-y-10 w-full ">
             {/* ITEM 1 */}
-            <div className="flex flex-col md:flex-row items-start gap-6 border-b border-[#EFE9E7] pb-4">
+            <div className="flex flex-col md:flex-row items-start gap-6">
               <div className="w-10 h-10 2xl:w-15 2xl:h-15 flex items-center justify-start shrink-0">
                 <img src={calIcon} alt="Calculator" />
               </div>
-              <div>
+              <div className="border-b border-[#EFE9E7] pb-4 w-full">
                 <h3 className="text-base md:text-md xl:text-lg 2xl:text-xl font-semibold mb-1">
                   AI Construction Calculator
                 </h3>
@@ -60,11 +60,11 @@ const Features = () => {
             </div>
 
             {/* ITEM 2 */}
-            <div className="flex flex-col md:flex-row items-start gap-6 border-b border-[#EFE9E7] pb-4">
+            <div className="flex flex-col md:flex-row items-start gap-6">
               <div className="w-10 h-10 2xl:w-15 2xl:h-15 flex items-center justify-start shrink-0">
                 <img src={GenIcon} alt="Document" />
               </div>
-              <div>
+              <div className="border-b border-[#EFE9E7] pb-4 w-full">
                 <h3 className="text-base md:text-md xl:text-lg 2xl:text-xl font-semibold mb-1">
                   AI Document Generator
                 </h3>
@@ -77,11 +77,11 @@ const Features = () => {
             </div>
 
             {/* ITEM 3 */}
-            <div className="flex flex-col md:flex-row items-start gap-6 border-b border-[#EFE9E7] pb-4">
+            <div className="flex flex-col md:flex-row items-start gap-6">
               <div className="w-10 h-10 2xl:w-15 2xl:h-15 flex items-center justify-start shrink-0">
                 <img src={TracIcon} alt="Tracking" />
               </div>
-              <div>
+              <div className="border-b border-[#EFE9E7] pb-4 w-full">
                 <h3 className="text-base md:text-md xl:text-lg 2xl:text-xl font-semibold mb-1">
                   Labour & Finance Tracking
                 </h3>
