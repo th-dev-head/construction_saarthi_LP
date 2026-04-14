@@ -61,33 +61,30 @@ const HowItWorks = () => {
         </div>
 
         {/* Content Section */}
-        <div className="flex flex-col lg:flex-row gap-12 items-center">
+        <div className="flex flex-col lg:flex-row gap-15 items-center">
           {/* Left Side: Steps */}
           <div className="flex-1 w-full space-y-4">
             {steps.map((step) => (
               <div
                 key={step.id}
                 onClick={() => setActiveStep(step)}
-                className={`p-6 rounded-2xl cursor-pointer transition-all duration-300 border-2 ${
-                  activeStep.id === step.id
+                className={`p-4 xl:p-6 rounded-2xl cursor-pointer transition-all duration-300 border-2 ${activeStep.id === step.id
                     ? "bg-[#F8F8F8] border-[#CE29003D]/24 shadow-lg shadow-[#C9BBBB1A]"
                     : "bg-[#F8F8F8] border-[#F3F3F3] hover:bg-[#F5F5F3]"
-                }`}
+                  }`}
               >
                 <div className="flex-col items-start gap-4">
-                  <div className={`rounded-xl transition-colors mb-4 ${
-                    activeStep.id === step.id ? "" : ""
-                  }`}>
-                    <img 
-                      src={step.icon} 
-                      alt={step.title} 
-                      className={`w-6 h-6 ${activeStep.id === step.id ? "" : ""}`} 
+                  <div className={`rounded-xl transition-colors mb-2 xl:mb-4 ${activeStep.id === step.id ? "" : ""
+                    }`}>
+                    <img
+                      src={step.icon}
+                      alt={step.title}
+                      className={`w-6 h-6 ${activeStep.id === step.id ? "" : ""}`}
                     />
                   </div>
                   <div className="">
-                    <h3 className={`font-semibold text-lg 2xl:text-xl ${
-                      activeStep.id === step.id ? "text-black" : "text-[#2D2D2D]"
-                    }`}>
+                    <h3 className={`font-semibold text-lg 2xl:text-xl ${activeStep.id === step.id ? "text-black" : "text-[#2D2D2D]"
+                      }`}>
                       {step.title}
                     </h3>
                     <p className="text-[#5F5F5F] text-sm 2xl:text-md leading-relaxed">
@@ -102,12 +99,12 @@ const HowItWorks = () => {
           {/* Right Side: Image/Mockup */}
           <div className="flex-1 w-full flex justify-center items-center">
             <div className="relative w-full max-w-full aspect-square flex items-center justify-center overflow-hidden">
-                <img
-                    key={activeStep.id}
-                    src={activeStep.image}
-                    alt={activeStep.title}
-                    className="w-full max-w-full h-full object-contain animate-fade-in"
-                />
+              <img
+                key={activeStep.id}
+                src={activeStep.image}
+                alt={activeStep.title}
+                className="w-full max-w-full h-full object-contain animate-fade-in"
+              />
             </div>
           </div>
         </div>

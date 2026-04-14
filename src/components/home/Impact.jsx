@@ -28,12 +28,12 @@ const Impact = () => {
         {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 2xl:gap-10">
           {/* Card 1 */}
-          <div className="bg-[#EBEAE8] p-6 rounded-2xl flex flex-col h-full">
-            <div className="w-full h-[220px] 2xl:h-[300px] flex items-center justify-center">
+          <div className="bg-[#EBEAE8] p-6 rounded-2xl flex flex-col h-full overflow-hidden">
+            <div className="w-full h-[220px] 2xl:h-[320px] flex items-center justify-center mt-4 -mb-5">
               <img
                 src={recedencyImage}
                 alt="Dashboard Preview"
-                className="max-h-full w-full object-contain"
+                className="max-h-full w-full object-contain scale-[1.2]"
               />
             </div>
 
@@ -50,12 +50,12 @@ const Impact = () => {
           </div>
 
           {/* Card 2 */}
-          <div className="bg-[#EBEAE8] p-6 rounded-2xl flex flex-col h-full">
-            <div className="w-full h-[220px] 2xl:h-[300px] flex items-center justify-center">
+          <div className="bg-[#EBEAE8] p-6 rounded-2xl flex flex-col h-full overflow-hidden">
+            <div className="w-full h-[220px] 2xl:h-[320px] flex items-center justify-center mt-5 -mb-5 ml-2">
               <img
                 src={calcIcon}
                 alt="Calculator Preview"
-                className="max-h-full w-full object-contain"
+                className="max-h-full w-full object-contain scale-[1.2]"
               />
             </div>
 
@@ -72,12 +72,12 @@ const Impact = () => {
           </div>
 
           {/* Card 3 */}
-          <div className="bg-[#EBEAE8] p-6 rounded-2xl flex flex-col h-full">
-            <div className="w-full h-[220px] 2xl:h-[300px] flex items-center justify-center">
+          <div className="bg-[#EBEAE8] p-6 rounded-2xl flex flex-col h-full overflow-hidden">
+            <div className="w-full h-[220px] 2xl:h-[320px] flex items-center justify-center mt-8 -mb-9">
               <img
                 src={inventoryIcon}
                 alt="Inventory Preview"
-                className="max-h-full w-full object-contain"
+                className="max-h-full w-full object-contain scale-[1.2]"
               />
             </div>
 

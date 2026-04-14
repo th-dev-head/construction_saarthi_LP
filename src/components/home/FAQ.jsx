@@ -50,7 +50,14 @@ const FAQ = () => {
           </h2>
         </div>
 
-        <div className="flex flex-col lg:flex-row items-center gap-10">
+        <div className="flex flex-col lg:flex-row items-center gap-20">
+          <div className="flex-1 md:flex justify-end items-center">
+            <img
+              src={faql}
+              alt="FAQ Illustration"
+              className="w-full max-w-lg md:max-w-full 2xl:max-w-full rounded-2xl object-contain"
+            />
+          </div>
           <div className="flex-1 space-y-4 w-full">
             {faqs.map((faq, index) => (
               <div
@@ -102,13 +109,7 @@ const FAQ = () => {
               </div>
             ))}
           </div>
-          <div className="flex-1 md:flex justify-end items-center">
-            <img
-              src={faql}
-              alt="FAQ Illustration"
-              className="w-full max-w-lg md:max-w-full 2xl:max-w-xl rounded-2xl object-contain"
-            />
-          </div>
+          
         </div>
       </div>
     </section>

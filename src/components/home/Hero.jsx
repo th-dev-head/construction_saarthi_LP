@@ -5,7 +5,7 @@ import IndiaFlag from "../../assets/icon/flag.png";
 
 const Hero = ({ scrollToSection }) => {
   return (
-    <section id="home" className="relative flex flex-col items-center justify-center py-20 px-4 md:p-[100px] xl:p-[180px] 2xl:p-[212px]">
+    <section id="home" className="relative flex flex-col items-center justify-center py-20 px-4 md:p-[100px] xl:p-[180px] 2xl:p-[225px]">
       {/* BACKGROUND IMAGE WITH REQUESTED EFFECTS */}
       <div className="absolute inset-0 z-0">
         <img
