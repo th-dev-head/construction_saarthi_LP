@@ -5,8 +5,10 @@ import TermsAndConditions from './pages/TermsAndConditions';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import NotFound from './pages/NotFound';
 import ScrollToTop from './components/common/ScrollToTop';
+import usePageTracking from './usePageTracking';
 
 const App = () => {
+  usePageTracking();
   const { pathname } = useLocation();
 
   useEffect(() => {

@@ -9,6 +9,7 @@ import Impact from "../components/home/Impact";
 import HowItWorks from "../components/home/HowItWorks";
 import Waitlist from "../components/home/Waitlist";
 import { useLocation } from "react-router-dom";
+import { trackEvent } from "../utils/pixel";
 
 const Home = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -57,6 +58,7 @@ const Home = () => {
       });
 
       if (response.ok) {
+        trackEvent('CompleteRegistration');
         setSubmittedEmail(formData.email);
         setSubmittedPhone(formData.phone);
         setIsModalOpen(true);

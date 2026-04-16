@@ -1,5 +1,5 @@
 import React from "react";
-import siteImage from "../../assets/icon/Features.png";
+import siteImage from "../../assets/icon/Features2.png";
 import calIcon from "../../assets/icon/Cc.svg";
 import GenIcon from "../../assets/icon/Gg.svg";
 import TracIcon from "../../assets/icon/Tt.svg";
@@ -7,7 +7,7 @@ import DasIcon from "../../assets/icon/Dd.svg";
 
 const Features = () => {
   return (
-    <section id="features" className="pt-15 pb-10 bg-white">
+    <section id="features" className="pt-20 pb-10 bg-white">
       <div className="max-w-full mx-auto space-y-10 py-10 px-4 lg:px-14 2xl:px-[260px] 2xl:py-20">
         {/* Heading */}
         <div className="text-center space-y-2">
@@ -30,28 +30,28 @@ const Features = () => {
         </div>
 
         {/* Content */}
-        <div className="flex flex-col lg:flex-row items-center gap-20">
+        <div className="flex flex-col lg:flex-row items-center gap-10 md:gap-20">
           {/* LEFT IMAGE */}
-          <div className="relative flex-1 justify-center lg:justify-start">
+          <div className="relative flex-1 flex justify-center lg:justify-start">
             <img
               src={siteImage}
               alt="Site Workers"
-              className="w-full max-w-full object-contain"
+              className="w-full max-w-full h-full md:h-[500px] xl:h-[550px] object-contain"
             />
           </div>
 
           {/* RIGHT CONTENT */}
-          <div className="flex-1 space-y-8 w-full ">
+          <div className="flex-1 space-y-4 xl:space-y-10 w-full ">
             {/* ITEM 1 */}
-            <div className="flex flex-col md:flex-row items-start gap-6 border-b border-[#EFE9E7] pb-4">
+            <div className="flex flex-col md:flex-row items-start gap-6">
               <div className="w-10 h-10 2xl:w-15 2xl:h-15 flex items-center justify-start shrink-0">
                 <img src={calIcon} alt="Calculator" />
               </div>
-              <div>
-                <h3 className="text-base md:text-lg 2xl:text-2xl font-semibold mb-1">
+              <div className="border-b border-[#EFE9E7] pb-4 w-full">
+                <h3 className="text-base md:text-md xl:text-lg 2xl:text-xl font-semibold mb-1">
                   AI Construction Calculator
                 </h3>
-                <p className="text-xs 2xl:text-[16px] leading-relaxed">
+                <p className="text-xs 2xl:text-[14px] leading-relaxed">
                   Get accurate material quantities, cost estimates, and
                   timelines instantly - reducing guesswork and costly
                   overruns before work even begins.
@@ -60,15 +60,15 @@ const Features = () => {
             </div>
 
             {/* ITEM 2 */}
-            <div className="flex flex-col md:flex-row items-start gap-6 border-b border-[#EFE9E7] pb-4">
+            <div className="flex flex-col md:flex-row items-start gap-6">
               <div className="w-10 h-10 2xl:w-15 2xl:h-15 flex items-center justify-start shrink-0">
                 <img src={GenIcon} alt="Document" />
               </div>
-              <div>
-                <h3 className="text-base md:text-lg 2xl:text-2xl font-semibold mb-1">
+              <div className="border-b border-[#EFE9E7] pb-4 w-full">
+                <h3 className="text-base md:text-md xl:text-lg 2xl:text-xl font-semibold mb-1">
                   AI Document Generator
                 </h3>
-                <p className="text-xs 2xl:text-[16px] leading-relaxed">
+                <p className="text-xs 2xl:text-[14px] leading-relaxed">
                   Create professional quotations, contracts, BOQs, and site
                   reports in minutes - standardized, error-free, and ready
                   to share.
@@ -77,15 +77,15 @@ const Features = () => {
             </div>
 
             {/* ITEM 3 */}
-            <div className="flex flex-col md:flex-row items-start gap-6 border-b border-[#EFE9E7] pb-4">
+            <div className="flex flex-col md:flex-row items-start gap-6">
               <div className="w-10 h-10 2xl:w-15 2xl:h-15 flex items-center justify-start shrink-0">
                 <img src={TracIcon} alt="Tracking" />
               </div>
-              <div>
-                <h3 className="text-base md:text-lg 2xl:text-2xl font-semibold mb-1">
+              <div className="border-b border-[#EFE9E7] pb-4 w-full">
+                <h3 className="text-base md:text-md xl:text-lg 2xl:text-xl font-semibold mb-1">
                   Labour & Finance Tracking
                 </h3>
-                <p className="text-xs 2xl:text-[16px] leading-relaxed">
+                <p className="text-xs 2xl:text-[14px] leading-relaxed">
                   Track attendance, wages, and daily expenses automatically
                   - giving you complete visibility into manpower and cash
                   flow.
@@ -99,10 +99,10 @@ const Features = () => {
                 <img src={DasIcon} alt="Dashboard" />
               </div>
               <div>
-                <h3 className="text-base md:text-lg 2xl:text-2xl font-semibold mb-1">
+                <h3 className="text-base md:text-md xl:text-lg 2xl:text-xl font-semibold mb-1">
                   AI Insights Dashboard
                 </h3>
-                <p className="text-xs 2xl:text-[16px] leading-relaxed">
+                <p className="text-xs 2xl:text-[14px] leading-relaxed">
                   Identify delays, control budgets, and make smarter
                   decisions with real-time insights based on your project
                   data.
