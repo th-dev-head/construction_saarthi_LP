@@ -23,7 +23,7 @@ const DownloadApp = () => {
         </p>
         
         {/* Store Buttons */}
-        <div className="flex flex-col sm:flex-row justify-center items-center gap-5 mb-15">
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-5 mb-10 sm:mb-15">
           <a
             href="https://apps.apple.com/app/construction-saarthi/id6760541467"
             className="flex items-center gap-4 bg-black text-white px-5 py-3 rounded-full transition-all hover:scale-[1.03] active:scale-[0.98] w-fit"
