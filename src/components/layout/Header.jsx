@@ -103,7 +103,7 @@ const Header = () => {
               alt="Construction Saarthi Logo"
               className="h-6 w-auto lg:h-8"
             />
-            <span className="hidden min-[330px]:inline-block font-bold text-[#060C12] text-sm lg:text-md whitespace-nowrap">
+            <span className="hidden min-[380px]:inline-block font-bold text-[#060C12] text-sm lg:text-md whitespace-nowrap">
               ConstructionSaarthi
             </span>
           </div>
@@ -140,10 +140,11 @@ const Header = () => {
           {/* CTA Button */}
           <div className="flex items-center gap-2">
             {/* Login Button */}
-            {/* <a
+            <a
               href="https://platform.constructionsaarthi.com"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackEvent('InitiateCheckout')}
             >
               <Button
                 variant="outline"
@@ -151,7 +152,7 @@ const Header = () => {
               >
                 Login
               </Button>
-            </a> */}
+            </a> 
 
             {/* Register Button */}
             <a

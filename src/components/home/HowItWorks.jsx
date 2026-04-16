@@ -44,7 +44,7 @@ const HowItWorks = () => {
   const [activeStep, setActiveStep] = useState(steps[0]);
 
   return (
-    <section id="how-it-works" className="py-20 px-4 lg:px-14 2xl:px-[260px] bg-[#FDFCFB]">
+    <section id="how-it-works" className="py-10 px-4 lg:px-14 2xl:px-[260px] 2xl:py-20 bg-[#FDFCFB]">
       <div className="max-w-full mx-auto">
         {/* Header Section */}
         <div className="text-center space-y-4 mb-16">
@@ -61,7 +61,7 @@ const HowItWorks = () => {
         </div>
 
         {/* Content Section */}
-        <div className="flex flex-col lg:flex-row gap-15 items-center">
+        <div className="flex flex-col lg:flex-row gap-8 sm:gap-15 items-center">
           {/* Left Side: Steps */}
           <div className="flex-1 w-full space-y-4">
             {steps.map((step) => (
