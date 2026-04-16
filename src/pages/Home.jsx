@@ -7,6 +7,7 @@ import Hero from "../components/home/Hero";
 import Features from "../components/home/Features";
 import Impact from "../components/home/Impact";
 import HowItWorks from "../components/home/HowItWorks";
+import DownloadApp from "../components/home/DownloadApp";
 import Waitlist from "../components/home/Waitlist";
 import { useLocation } from "react-router-dom";
 import { trackEvent } from "../utils/pixel";
@@ -90,6 +91,7 @@ const Home = () => {
         <Features />
         <Impact />
         <HowItWorks />
+        <DownloadApp />
         <FAQ />
         <Waitlist
           formData={formData}

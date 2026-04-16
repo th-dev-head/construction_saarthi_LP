@@ -37,7 +37,7 @@ const FAQ = () => {
   };
 
   return (
-    <section id="faq" className=" px-4 lg:px-14 2xl:px-[260px] overflow-hidden">
+    <section id="faq" className=" px-4 lg:px-14 2xl:px-[260px] pt-10 2xl:pt-20 overflow-hidden">
       <div className="max-w-full mx-auto space-y-8">
         <div className="text-start mb-12">
           <div className="inline-flex items-center gap-2 px-4 py-1 bg-[#E9E2D8] rounded-full text-xs 2xl:text-lg font-medium max-[380px]:text-[9px] max-[380px]:px-3">

@@ -15,6 +15,7 @@ const Header = () => {
     { label: "Home", id: "home" },
     { label: "Features", id: "features" },
     { label: "Impact", id: "impact" },
+    { label: "Download App", id: "download" },
   ];
 
   // Sync active item with location state (for cross-page navigation)
