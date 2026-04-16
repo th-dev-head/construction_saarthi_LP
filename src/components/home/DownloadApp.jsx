@@ -14,7 +14,7 @@ const DownloadApp = () => {
         </div>
         
         {/* Content */}
-        <h2 className="font-semibold text-2xl 2xl:text-5xl md:text-3xl max-[360px]:text-lg mb-4 text-[#B02E0C]">
+        <h2 className="font-semibold text-2xl 2xl:text-5xl md:text-3xl max-[360px]:text-lg mb-2 text-[#B02E0C]">
           Your Construction Site, <span className="block md:inline text-[#121212]">Now in Your Pocket</span>
         </h2>
         
