@@ -25,7 +25,7 @@ const faqs = [
   {
     question: "How can I get started with Construction Saarthi?",
     answer:
-      "Getting started is simple! You can book a demo by filling out the form provided just below the FAQ section on this page. Our team will get in touch with you shortly to guide you through the platform and help you get started.",
+      "Getting started is simple! You can sign up directly on our platform using the 'Register' button at the top of the page. Our team will guide you through the platform and help you get started.",
   },
 ];
 
@@ -37,7 +37,7 @@ const FAQ = () => {
   };
 
   return (
-    <section id="faq" className="pt-20 px-4 lg:px-14 2xl:px-[260px] overflow-hidden">
+    <section id="faq" className=" px-4 lg:px-14 2xl:px-[260px] overflow-hidden">
       <div className="max-w-full mx-auto space-y-8">
         <div className="text-start mb-12">
           <div className="inline-flex items-center gap-2 px-4 py-1 bg-[#E9E2D8] rounded-full text-xs 2xl:text-lg font-medium max-[380px]:text-[9px] max-[380px]:px-3">
