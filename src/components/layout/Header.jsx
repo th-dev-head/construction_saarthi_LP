@@ -55,7 +55,7 @@ const Header = () => {
   return (
     <header className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md">
       <div className="max-w-full mx-auto px-4 lg:px-14 2xl:px-[260px] py-3 lg:py-4">
-        <div className="relative flex items-center justify-between bg-[#F3EFEC] rounded-full px-4 py-2 lg:bg-transparent lg:rounded-none lg:p-0">
+        <div className="relative flex items-center justify-between bg-[#F3EFEC] rounded-full px-3 py-2 lg:bg-transparent lg:rounded-none lg:p-0">
           {/* Mobile/Tablet Menu Toggle (Left) */}
           <button
             className="lg:hidden p-1 text-[#2D2D2D] order-first"
@@ -140,10 +140,12 @@ const Header = () => {
           {/* CTA Button */}
           <div className="flex items-center gap-2">
             {/* Login Button */}
-            {/* <a
+            <a
               href="https://platform.constructionsaarthi.com"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackEvent('InitiateCheckout')}
+              className="hidden min-[412px]:block"
             >
               <Button
                 variant="outline"
@@ -151,7 +153,7 @@ const Header = () => {
               >
                 Login
               </Button>
-            </a> */}
+            </a> 
 
             {/* Register Button */}
             <a

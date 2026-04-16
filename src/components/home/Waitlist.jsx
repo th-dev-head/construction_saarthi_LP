@@ -7,7 +7,7 @@ const Waitlist = ({ formData, setFormData, handleFormSubmit }) => {
   return (
     <section
       id="waitlist"
-      className="py-20 px-4 lg:px-14 2xl:px-[260px] 2xl:py-20 overflow-hidden"
+      className="py-10 px-4 lg:px-14 2xl:px-[260px] 2xl:py-20 overflow-hidden"
     >
       <div className="max-w-full mx-auto space-y-8">
         {/* Heading */}
@@ -71,7 +71,7 @@ const Waitlist = ({ formData, setFormData, handleFormSubmit }) => {
                         })
                       }
                       placeholder="Write your first name..."
-                      className="w-full border-b border-[#817794] 2xl:mt-4 mb-4 focus:border-[#C4431B] outline-none text-sm bg-transparent"
+                      className="w-full border-b border-[#817794] 2xl:mt-4 mb- focus:border-[#C4431B] outline-none text-sm bg-transparent"
                     />
                   </div>
                   <div>
@@ -109,7 +109,7 @@ const Waitlist = ({ formData, setFormData, handleFormSubmit }) => {
                         setFormData({ ...formData, email: e.target.value })
                       }
                       placeholder="Write your email address..."
-                      className="w-full border-b border-[#817794] 2xl:mt-4 mb-4 focus:border-[#C4431B] outline-none text-sm bg-transparent"
+                      className="w-full border-b border-[#817794] 2xl:mt-4 mb- focus:border-[#C4431B] outline-none text-sm bg-transparent"
                     />
                   </div>
                   <div>
