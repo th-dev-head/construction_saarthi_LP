@@ -56,7 +56,7 @@ const DownloadApp = () => {
           <img 
             src={downloadImg} 
             alt="ConstructionSaarthi Mobile App Interface" 
-            className="w-full h-auto drop-shadow-[0_32px_64px_rgba(0,0,0,0.1)]"
+            className="w-full h-auto "
           />
         </div>
       </div>
