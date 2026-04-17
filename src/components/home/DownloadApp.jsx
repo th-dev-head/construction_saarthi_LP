@@ -1,27 +1,71 @@
-import React from "react";
+import React, { useRef, useEffect, useState } from "react";
 import downloadImg from "../../assets/icon/Download.png";
 import appleLogo from "../../assets/icon/Apple.png";
 import playStoreLogo from "../../assets/icon/Playstore.png";
 
+
+const MockupImage = ({ src }) => {
+  const ref = useRef(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const handleScroll = () => {
+      const rect = el.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      // fire when top of image enters bottom 80% of viewport while scrolling
+      if (rect.top < windowHeight * 0.85 && rect.bottom > 0) {
+        setVisible(true);
+        window.removeEventListener("scroll", handleScroll);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return (
+    <div
+      ref={ref}
+      className="relative max-w-5xl mx-auto"
+      style={{
+        opacity: visible ? 1 : 0,
+        transform: visible ? "translateY(0)" : "translateY(80px)",
+        transition: "opacity 1.4s ease-out, transform 1.4s ease-out",
+        transitionDelay: visible ? "0.15s" : "0s",
+        willChange: "opacity, transform",
+      }}
+    >
+      <img
+        src={src}
+        alt="ConstructionSaarthi Mobile App Interface"
+        className="w-full h-auto"
+      />
+    </div>
+  );
+};
+
 const DownloadApp = () => {
   return (
-    <section id="download" className="pt-10 px-4 lg:px-14 2xl:px-[260px] 2xl:pt-20 bg-[#F3F3F3] border border-[#E9E2D84D]">
+    <section id="download" className="pt-10 px-4 lg:px-14 2xl:px-[260px] 2xl:pt-20 bg-[#F3F3F3] border border-[#E9E2D84D] overflow-hidden">
       <div className="max-w-7xl mx-auto text-center">
         {/* Badge */}
         <div className="inline-flex items-center gap-2 px-4 py-1 bg-[#E9E2D8] rounded-full text-xs 2xl:text-lg font-medium mb-4">
           <span className="w-1.5 h-1.5 rounded-full bg-[#B02E0C]"></span>
           Get App Now
         </div>
-        
+
         {/* Content */}
         <h2 className="font-semibold text-2xl 2xl:text-5xl md:text-3xl max-[360px]:text-lg mb-2 text-[#B02E0C]">
           Your Construction Site, <span className="block md:inline text-[#121212]">Now in Your Pocket</span>
         </h2>
-        
+
         <p className="text-sm 2xl:text-[16px] max-w-2xl 2xl:max-w-3xl mx-auto max-[360px]:text-xs mb-4">
           Access ConstructionSaarthi on your mobile and stay in control of your projects on the go.
         </p>
-        
+
         {/* Store Buttons */}
         <div className="flex flex-col sm:flex-row justify-center items-center gap-5 mb-10 sm:mb-15">
           <a
@@ -50,15 +94,9 @@ const DownloadApp = () => {
             </div>
           </a>
         </div>
-        
+
         {/* Mockups */}
-        <div className="relative max-w-5xl mx-auto">
-          <img 
-            src={downloadImg} 
-            alt="ConstructionSaarthi Mobile App Interface" 
-            className="w-full h-auto "
-          />
-        </div>
+        <MockupImage src={downloadImg} />
       </div>
     </section>
   );

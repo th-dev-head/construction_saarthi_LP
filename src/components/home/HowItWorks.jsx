@@ -63,7 +63,7 @@ const HowItWorks = () => {
         {/* Content Section */}
         <div className="flex flex-col lg:flex-row gap-8 sm:gap-15 items-center">
           {/* Left Side: Steps */}
-          <div className="flex-1 w-full space-y-4">
+          <div className="flex-1 w-full space-y-6">
             {steps.map((step) => (
               <div
                 key={step.id}
@@ -98,12 +98,12 @@ const HowItWorks = () => {
 
           {/* Right Side: Image/Mockup */}
           <div className="flex-1 w-full flex justify-center items-center">
-            <div className="relative w-full max-w-full aspect-square flex items-center justify-center overflow-hidden">
+            <div className="relative w-full max-w-full  flex items-center justify-center overflow-hidden">
               <img
                 key={activeStep.id}
                 src={activeStep.image}
                 alt={activeStep.title}
-                className="w-full max-w-full h-full object-contain animate-fade-in"
+                className="w-full max-w-full h-full object-contain animate-fade-in border border-[#E9E2D8] rounded-[24px]"
               />
             </div>
           </div>
