@@ -2,7 +2,9 @@ import React from "react";
 import Button from "../common/Button";
 import heroBg from "../../assets/icon/Hero.svg";
 import IndiaFlag from "../../assets/icon/flag.png";
-import AvatarImg from "../../assets/icon/Avatar.png";
+// import AvatarImg from "../../assets/icon/Avatar.png";
+import AvatarImg from "../../assets/icon/HeroAvtar.png";
+
 import { trackEvent } from "../../utils/pixel";
 
 const Hero = ({ scrollToSection }) => {
