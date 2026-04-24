@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import Button from "../common/Button";
 import logo from "../../assets/icon/Cslogo.svg";
+import appleLogo from "../../assets/icon/Apple.png";
+import playStoreLogo from "../../assets/icon/Playstore.png";
 import { trackEvent } from "../../utils/pixel";
 
 const Header = () => {
@@ -10,6 +12,17 @@ const Header = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const isHomePage = location.pathname === "/";
+  const [deviceType, setDeviceType] = useState("android");
+
+  // OS detection for mobile download link
+  React.useEffect(() => {
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+      setDeviceType("ios");
+    } else {
+      setDeviceType("android");
+    }
+  }, []);
 
   const navItems = [
     { label: "Home", id: "home" },
@@ -140,13 +153,40 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="flex items-center gap-2">
-            {/* Login Button */}
+            {/* Download App Button (Mobile Only) */}
+            <a
+              href={
+                deviceType === "ios"
+                  ? "https://apps.apple.com/app/construction-saarthi/id6760541467"
+                  : "https://play.google.com/store/apps/details?id=com.constructionsaarthi.com&hl=en_IN"
+              }
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackEvent("Lead")}
+              className="lg:hidden flex items-center gap-2 bg-black text-white px-4 py-1.5 rounded-full transition-all active:scale-[0.98] w-fit"
+            >
+              <img
+                src={deviceType === "ios" ? appleLogo : playStoreLogo}
+                alt={deviceType === "ios" ? "App Store" : "Play Store"}
+                className="w-5 h-5 object-contain"
+              />
+              <div className="flex flex-col items-start leading-[1.0]">
+                <span className="text-[8px] font-normal opacity-60">
+                  Download on the
+                </span>
+                <span className="text-[14px] font-semibold">
+                  {deviceType === "ios" ? "App Store" : "Play Store"}
+                </span>
+              </div>
+            </a>
+
+            {/* Login Button (Desktop Only) */}
             <a
               href="https://platform.constructionsaarthi.com"
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() => trackEvent('InitiateCheckout')}
-              className="hidden min-[412px]:block"
+              onClick={() => trackEvent("InitiateCheckout")}
+              className="hidden lg:block"
             >
               <Button
                 variant="outline"
@@ -154,14 +194,15 @@ const Header = () => {
               >
                 Login
               </Button>
-            </a> 
+            </a>
 
-            {/* Register Button */}
+            {/* Register Button (Desktop Only) */}
             <a
               href="https://platform.constructionsaarthi.com/register"
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() => trackEvent('Lead')}
+              onClick={() => trackEvent("Lead")}
+              className="hidden lg:block"
             >
               <Button
                 variant="primary"
