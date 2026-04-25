@@ -53,7 +53,7 @@ export const trackVisit = async (utm_data) => {
     const baseUrl = import.meta.env.VITE_API_BASE_URL;
     if (!baseUrl) return;
 
-    await fetch(`${baseUrl}/leads/save`, {
+    await fetch(`${baseUrl}/api/leads/save`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
