@@ -86,7 +86,7 @@ const Hero = ({ scrollToSection }) => {
                 className="flex items-center gap-3 sm:gap-4 bg-black text-white px-5 py-2.5 sm:px-5 sm:py-3 rounded-full transition-all hover:scale-[1.03] active:scale-[0.98] w-fit shadow-2xl border border-white/10"
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => trackEvent("InitiateCheckout")}
+                onClick={() => trackEvent("Lead")}
               >
                 <img
                   src={appleLogo}
@@ -108,7 +108,7 @@ const Hero = ({ scrollToSection }) => {
                 className="flex items-center gap-3 sm:gap-4 bg-black text-white px-5 py-2.5 sm:px-5 sm:py-3 rounded-full transition-all hover:scale-[1.03] active:scale-[0.98] w-fit shadow-2xl border border-white/10"
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => trackEvent("InitiateCheckout")}
+                onClick={() => trackEvent("Lead")}
               >
                 <img
                   src={playStoreLogo}

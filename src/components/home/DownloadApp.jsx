@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState } from "react";
 import downloadImg from "../../assets/icon/Download.png";
 import appleLogo from "../../assets/icon/Apple.png";
 import playStoreLogo from "../../assets/icon/Playstore.png";
+import { trackEvent } from "../../utils/pixel";
 
 
 const MockupImage = ({ src }) => {
@@ -73,6 +74,7 @@ const DownloadApp = () => {
             className="flex items-center gap-4 bg-black text-white px-5 py-3 rounded-full transition-all hover:scale-[1.03] active:scale-[0.98] w-fit"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackEvent("Lead")}
           >
             <img src={appleLogo} alt="Apple" className="w-8 h-8 object-contain" />
             <div className="flex flex-col items-start leading-[1.0]">
@@ -86,6 +88,7 @@ const DownloadApp = () => {
             className="flex items-center gap-4 bg-black text-white px-5 py-3 rounded-full transition-all hover:scale-[1.03] active:scale-[0.98] w-fit"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackEvent("Lead")}
           >
             <img src={playStoreLogo} alt="Play Store" className="w-8 h-8 object-contain" />
             <div className="flex flex-col items-start leading-[1.0]">
