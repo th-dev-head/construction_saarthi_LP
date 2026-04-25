@@ -1,15 +1,35 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Button from "../common/Button";
 import heroBg from "../../assets/icon/Hero.svg";
 import IndiaFlag from "../../assets/icon/flag.png";
-// import AvatarImg from "../../assets/icon/Avatar.png";
 import AvatarImg from "../../assets/icon/HeroAvtar.png";
+import appleLogo from "../../assets/icon/Apple.png";
+import playStoreLogo from "../../assets/icon/Playstore.png";
 
 import { trackEvent } from "../../utils/pixel";
 
 const Hero = ({ scrollToSection }) => {
+  const [device, setDevice] = useState("android");
+
+  useEffect(() => {
+    const ua = navigator.userAgent || navigator.vendor || window.opera;
+    if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) {
+      setDevice("ios");
+    } else if (
+      navigator.maxTouchPoints > 0 &&
+      /MacIntel/.test(navigator.platform)
+    ) {
+      setDevice("ios");
+    } else {
+      setDevice("android");
+    }
+  }, []);
+
   return (
-    <section id="home" className="relative flex flex-col items-center justify-center py-20 px-4 md:p-[150px] xl:p-[200px] 2xl:p-[200px]">
+    <section
+      id="home"
+      className="relative flex flex-col items-center justify-center py-20 px-4 md:p-[150px] xl:p-[200px] 2xl:p-[200px]"
+    >
       {/* BACKGROUND IMAGE WITH REQUESTED EFFECTS */}
       <div className="absolute inset-0 z-0">
         <img
@@ -21,7 +41,11 @@ const Hero = ({ scrollToSection }) => {
 
       {/* AVATAR IMAGE ON THE RIGHT */}
       <div className="absolute bottom-0 right-0 2xl:right-40 z-[20] hidden lg:block w-[250px] xl:w-[400px] 2xl:w-[416px] pointer-events-none">
-        <img src={AvatarImg} alt="Construction Worker" className="w-full h-auto object-contain object-bottom" />
+        <img
+          src={AvatarImg}
+          alt="Construction Worker"
+          className="w-full h-auto object-contain object-bottom"
+        />
       </div>
 
       {/* CONTENT */}
@@ -54,12 +78,62 @@ const Hero = ({ scrollToSection }) => {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4 w-fit sm:w-auto mb-10 sm:mb-0">
+          {/* Mobile Download Buttons (Hidden on Large Screens) */}
+          <div className="lg:hidden">
+            {device === "ios" ? (
+              <a
+                href="https://apps.apple.com/app/construction-saarthi/id6760541467"
+                className="flex items-center gap-3 sm:gap-4 bg-black text-white px-5 py-2.5 sm:px-5 sm:py-3 rounded-full transition-all hover:scale-[1.03] active:scale-[0.98] w-fit shadow-2xl border border-white/10"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackEvent("InitiateCheckout")}
+              >
+                <img
+                  src={appleLogo}
+                  alt="App Store"
+                  className="w-7 h-7 sm:w-8 sm:h-8 object-contain"
+                />
+                <div className="flex flex-col items-start leading-[1.0]">
+                  <span className="text-[11px] sm:text-[12px] font-normal opacity-60">
+                    Download on the
+                  </span>
+                  <span className="text-[16px] sm:text-[20px] font-semibold">
+                    App Store
+                  </span>
+                </div>
+              </a>
+            ) : (
+              <a
+                href="https://play.google.com/store/apps/details?id=com.constructionsaarthi.com&hl=en_IN"
+                className="flex items-center gap-3 sm:gap-4 bg-black text-white px-5 py-2.5 sm:px-5 sm:py-3 rounded-full transition-all hover:scale-[1.03] active:scale-[0.98] w-fit shadow-2xl border border-white/10"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackEvent("InitiateCheckout")}
+              >
+                <img
+                  src={playStoreLogo}
+                  alt="Play Store"
+                  className="w-7 h-7 sm:w-8 sm:h-8 object-contain"
+                />
+                <div className="flex flex-col items-start leading-[1.0]">
+                  <span className="text-[11px] sm:text-[12px] font-normal opacity-60">
+                    Download on the
+                  </span>
+                  <span className="text-[18px] sm:text-[20px] font-semibold">
+                    Play Store
+                  </span>
+                </div>
+              </a>
+            )}
+          </div>
+
+          {/* Desktop Login Button (Hidden on Small Screens) */}
           <a
             href="https://platform.constructionsaarthi.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto"
-            onClick={() => trackEvent('InitiateCheckout')}
+            className="hidden lg:block"
+            onClick={() => trackEvent("InitiateCheckout")}
           >
             <Button
               variant="outline"
@@ -68,7 +142,7 @@ const Hero = ({ scrollToSection }) => {
               Login
             </Button>
           </a>
-          <Button
+          {/* <Button
             variant="primary"
             className="w-full sm:w-[185px] bg-[#D33D18] hover:bg-[#B02E0C] text-white border-none px-8 py-3 md:py-4 rounded-full transition-all duration-300 shadow-xl"
             onClick={(e) => scrollToSection(e, "waitlist")}
@@ -89,7 +163,7 @@ const Hero = ({ scrollToSection }) => {
             }
           >
             Book Demo
-          </Button>
+          </Button> */}
         </div>
       </div>
 
