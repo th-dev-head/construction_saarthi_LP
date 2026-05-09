@@ -117,7 +117,7 @@ const Header = () => {
               alt="Construction Saarthi Logo"
               className="h-6 w-auto lg:h-8"
             />
-            <span className="hidden min-[330px]:inline-block font-bold text-[#060C12] text-sm lg:text-md whitespace-nowrap">
+            <span className="hidden min-[330px]:inline-block font-bold text-[#060C12] text-xs sm:text-sm lg:text-md whitespace-nowrap">
               ConstructionSaarthi
             </span>
           </div>
