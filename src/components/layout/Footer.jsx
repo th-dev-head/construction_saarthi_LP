@@ -6,7 +6,7 @@ import EmailIcon from "../../assets/icon/Email.svg";
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-[#E9E2D8] px-4 lg:px-14 2xl:px-27 pt-6 md:pt-10 2xl:pt-15 md:pb-10 2xl:pb-15">
+    <footer className="w-full bg-[#E9E2D8] px-4 lg:px-14 2xl:px-[260px] pt-6 md:pt-10 2xl:pt-15 md:pb-5">
       <div className="max-w-full mx-auto">
         {/* Top Section */}
         <div className="flex flex-col md:flex-row justify-between gap-10 border-b border-[#D8D0C5] pb-4 2xl:pb-8">
@@ -23,8 +23,16 @@ const Footer = () => {
               Manage Every Construction Site Smarter
             </p>
 
-            <p className="text-sm 2xl:text-xl font-medium">
-              Product By <span className="text-[#B02E0C]">TechifyHouse</span>
+            <p className="text-sm font-medium">
+              Product By{" "}
+              <a 
+                href="http://www.techifyhouse.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-[#B02E0C] font-bold hover:underline"
+              >
+                TechifyHouse
+              </a>
             </p>
           </div>
 
@@ -49,9 +57,16 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="bg-white md:bg-transparent -mx-4 lg:mx-0 px-4 lg:px-0 pb-4 md:pb-0">
           <div className="flex flex-col-reverse md:flex-row justify-between items-center gap-4 pt-4 2xl:pt-6 text-center md:text-left">
-            <p className="text-[10px] md:text-xs 2xl:text-lg font-medium text-[#2D2D2D] border-t border-[#E5E5E5] md:border-t-0 pt-4">
-              © 2025 GarageSaarthi. All rights reserved by{" "}
-              <span className="text-[#B02E0C]">Techifyhouse.</span>
+            <p className="text-[10px] md:text-xs 2xl:text-lg font-medium text-[#2D2D2D] border-t border-[#E5E5E5] ">
+              © {new Date().getFullYear()} ConstructionSaarthi. All rights reserved by{" "}
+              <a 
+              href="http://www.techifyhouse.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-[#B02E0C] font-medium hover:underline"
+            >
+              Techifyhouse.
+            </a>
             </p>
 
             <div className="flex gap-6 ">

@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import Button from "../common/Button";
 import logo from "../../assets/icon/Cslogo.svg";
+import appleLogo from "../../assets/icon/Apple.png";
+import playStoreLogo from "../../assets/icon/Playstore.png";
+import { trackEvent } from "../../utils/pixel";
 
 const Header = () => {
   const [activeItem, setActiveItem] = useState("Home");
@@ -9,36 +12,64 @@ const Header = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const isHomePage = location.pathname === "/";
+  const [deviceType, setDeviceType] = useState("android");
+
+  // OS detection for mobile download link
+  React.useEffect(() => {
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+      setDeviceType("ios");
+    } else {
+      setDeviceType("android");
+    }
+  }, []);
+
+  const navItems = [
+    { label: "Home", id: "home" },
+    { label: "Features", id: "features" },
+    { label: "Impact", id: "impact" },
+    { label: "Download App", id: "download" },
+  ];
+
+  // Sync active item with location state (for cross-page navigation)
+  React.useEffect(() => {
+    if (isHomePage) {
+      if (location.state?.scrollTo) {
+        const item = navItems.find((i) => i.id === location.state.scrollTo);
+        if (item) setActiveItem(item.label);
+      } else if (window.scrollY < 100) {
+        setActiveItem("Home");
+      }
+    } else {
+      setActiveItem("");
+    }
+  }, [location, isHomePage]);
 
   const handleNavigation = (e, id) => {
     e.preventDefault();
-    
+
+    const item = navItems.find((i) => i.id === id);
+    if (item) setActiveItem(item.label);
+
     if (isHomePage) {
-      const element = document.getElementById(id);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
+      if (id === "home") {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      } else {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
       }
-      // Map id to label roughly or just keep current active logic
-      const item = navItems.find(i => i.id === id);
-      if(item) setActiveItem(item.label);
     } else {
       navigate("/", { state: { scrollTo: id } });
     }
     setIsMenuOpen(false);
   };
 
-  const navItems = [
-    { label: "Home", id: "home" },
-    { label: "Features", id: "features" },
-    { label: "Impact", id: "impact" },
-    { label: "Preview", id: "preview" },
-    { label: "Waitlist", id: "waitlist" },
-  ];
-
   return (
     <header className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md">
-      <div className="max-w-6xl 2xl:max-w-7xl mx-auto px-4 py-3 lg:px-6 lg:py-4">
-        <div className="relative flex items-center justify-between bg-[#F3EFEC] rounded-full px-4 py-2 lg:bg-transparent lg:rounded-none lg:p-0">
+      <div className="max-w-full mx-auto px-4 lg:px-14 2xl:px-[260px] py-3 lg:py-4">
+        <div className="relative flex items-center justify-between bg-[#F3EFEC] rounded-full px-3 py-2 lg:bg-transparent lg:rounded-none lg:p-0">
           {/* Mobile/Tablet Menu Toggle (Left) */}
           <button
             className="lg:hidden p-1 text-[#2D2D2D] order-first"
@@ -77,7 +108,7 @@ const Header = () => {
           </button>
 
           {/* Logo & Brand */}
-          <div 
+          <div
             className="flex items-center gap-2 cursor-pointer lg:order-none"
             onClick={(e) => handleNavigation(e, "home")}
           >
@@ -86,8 +117,8 @@ const Header = () => {
               alt="Construction Saarthi Logo"
               className="h-6 w-auto lg:h-8"
             />
-            <span className="hidden min-[425px]:inline-block font-bold text-sm lg:text-md whitespace-nowrap">
-              Construction Saarthi
+            <span className="hidden min-[330px]:inline-block font-bold text-[#060C12] text-xs sm:text-sm lg:text-md whitespace-nowrap">
+              ConstructionSaarthi
             </span>
           </div>
 
@@ -104,22 +135,14 @@ const Header = () => {
                   className={`
                     flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-medium
                     transition-all duration-200
-                    ${
-                      isActive
-                        ? "bg-[#F9F6F3] text-black"
-                        : "text-[#5F5F5F]"
-                    }
+                    ${isActive ? "bg-[#F9F6F3] text-black" : "text-[#5F5F5F]"}
                   `}
                 >
                   <span
                     className={`
                       w-1.5 h-1.5 rounded-full bg-[#C4431B]
                       transition-opacity duration-200
-                      ${
-                        isActive
-                          ? "opacity-100"
-                          : "opacity-0"
-                      }
+                      ${isActive ? "opacity-100" : "opacity-0"}
                     `}
                   />
                   {item.label}
@@ -129,30 +152,65 @@ const Header = () => {
           </nav>
 
           {/* CTA Button */}
-          <div className="flex items-center">
-            <Button
-              variant="primary"
-              className="px-4 py-1.5 text-xs lg:text-sm lg:px-6 lg:py-2"
-              onClick={(e) => handleNavigation(e, "waitlist")}
-              icon={
-                <svg
-                  width="14"
-                  height="14"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="lg:w-4 lg:h-4"
-                >
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                  <polyline points="12 5 19 12 12 19" />
-                </svg>
+          <div className="flex items-center gap-2">
+            {/* Download App Button (Mobile Only) */}
+            <a
+              href={
+                deviceType === "ios"
+                  ? "https://apps.apple.com/app/construction-saarthi/id6760541467"
+                  : "https://play.google.com/store/apps/details?id=com.constructionsaarthi.com&hl=en_IN"
               }
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackEvent("Lead")}
+              className="lg:hidden flex items-center gap-2 bg-black text-white px-4 py-1.5 rounded-full transition-all active:scale-[0.98] w-fit"
             >
-              Join Waitlist
-            </Button>
+              <img
+                src={deviceType === "ios" ? appleLogo : playStoreLogo}
+                alt={deviceType === "ios" ? "App Store" : "Play Store"}
+                className="w-5 h-5 object-contain"
+              />
+              <div className="flex flex-col items-start leading-[1.0]">
+                <span className="text-[8px] font-normal opacity-60">
+                  Download on the
+                </span>
+                <span className="text-[14px] font-semibold">
+                  {deviceType === "ios" ? "App Store" : "Play Store"}
+                </span>
+              </div>
+            </a>
+
+            {/* Login Button (Desktop Only) */}
+            <a
+              href="https://platform.constructionsaarthi.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackEvent("InitiateCheckout")}
+              className="hidden lg:block"
+            >
+              <Button
+                variant="outline"
+                className="text-xs lg:text-sm lg:px-6 lg:py-2"
+              >
+                Login
+              </Button>
+            </a>
+
+            {/* Register Button (Desktop Only) */}
+            <a
+              href="https://platform.constructionsaarthi.com/register"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackEvent("Lead")}
+              className="hidden lg:block"
+            >
+              <Button
+                variant="primary"
+                className="text-xs lg:text-sm lg:px-6 lg:py-2"
+              >
+                Register
+              </Button>
+            </a>
           </div>
 
           {/* Mobile/Tablet Dropdown Menu */}
